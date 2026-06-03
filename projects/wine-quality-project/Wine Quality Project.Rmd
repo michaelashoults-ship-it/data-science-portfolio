@@ -1,0 +1,181 @@
+---
+title: "Wine Quality Project"
+output:
+  word_document: default
+  html_document: default
+date: "2025-12-03"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+Data Exploration 
+```{r}
+library(dplyr)
+library(ggplot2)
+
+wine <- read.csv("winequality-red.csv", header=TRUE, sep=";") 
+head(wine)
+
+summary(wine)
+glimpse(wine) 
+
+pairs(wine[, 1:6])
+
+pairs(wine[, 7:12])
+
+cor(wine)
+
+ggplot(wine, aes(x = fixed.acidity)) + 
+  geom_histogram(color = "black") + 
+  labs( 
+        title = "Fixed Acidity in Red Wine", 
+        x = "Fixed Acidity (g/L)", 
+        y = "Count" 
+      )
+
+ggplot(wine, aes(x = volatile.acidity)) + 
+  geom_histogram(color = "black") + 
+  labs( 
+        title = "Volatile Acidity in Red Wine", 
+        x = "Volatile Acidity (g/L)", 
+        y = "Count"
+      )
+
+ggplot(wine, aes(x = citric.acid)) + 
+  geom_histogram(color = "black") + 
+  labs( 
+        title = "Citric Acid in Red Wine", 
+        x = "Citric Acid (g/L)", 
+        y = "Count" 
+      ) 
+
+ggplot(wine, aes(x = residual.sugar)) + 
+  geom_histogram(color = "black") + 
+  labs( 
+        title = "Residual Sugar in Red Wine", 
+        x = "Residual Sugar (g/L)", 
+        y = "Count" 
+      ) 
+
+ggplot(wine, aes(x = chlorides)) + 
+  geom_histogram(color = "black") + 
+  labs( 
+        title = "Chloride Levels in Red Wine", 
+        x = "Chlorides (g/L)", 
+        y = "Count" 
+      ) 
+
+ggplot(wine, aes(x = total.sulfur.dioxide)) + 
+  geom_histogram(color = "black") + 
+  labs( 
+        title = "Amount of Total Sulfur Dioxide in Red Wine", 
+        x = "Total Sulfur Dioxide (mg/L)", 
+        y = "Count" 
+      ) 
+
+ggplot(wine, aes(x = free.sulfur.dioxide)) + 
+  geom_histogram(color = "black") + 
+  labs( 
+        title = "Amount of Free Sulfur Dioxide in Red Wine", 
+        x = "Free Sulfur Dioxide (mg/L)", 
+        y = "Count" 
+      ) 
+
+ggplot(wine, aes(x = density)) + 
+  geom_histogram(color = "black") + 
+  labs( 
+        title = "Red Wine Density", 
+        x = "Density (g/cm3)", 
+        y = "Count" 
+      ) 
+
+ggplot(wine, aes(x = pH)) + 
+  geom_histogram(color = "black") + 
+  labs( 
+        title = "pH of Red Wine", 
+        x = "pH", 
+        y = "Count" 
+      ) 
+
+ggplot(wine, aes(x = sulphates)) + 
+  geom_histogram(color = "black") + 
+  labs( 
+        title = "Sulphate Levels in Red Wine", 
+        x = "Amount of Sulfate (mg/L)", 
+        y = "Count"
+      ) 
+
+ggplot(wine, aes(x = alcohol)) + 
+  geom_histogram(color = "black") + 
+  labs( 
+        title = "Alcohol by Volume in Red Wine", 
+        x = "Alcohol by Volume (%)", 
+        y = "Count" 
+      ) 
+
+ggplot(wine, aes(x = quality)) + 
+  geom_histogram(color = "black") + 
+  labs( 
+        title = "Red Wine Quality", 
+        x = "Quality", 
+        y = "Count" 
+      ) 
+```
+
+
+
+Fit the Full Regression Model
+```{r}
+model_full <- lm(quality ~ ., data = wine)
+summary(model_full) 
+```
+
+
+
+Model Selection
+```{r}
+library(MASS) 
+model_best <- stepAIC(model_full, direction = "both", trace = FALSE) 
+summary(model_best)
+```
+
+
+Model Diagnostics 
+```{r}
+plot(model_best)
+
+library(ggplot2)
+
+ggplot(data = wine, aes(model_best$residuals))+ 
+  geom_histogram(aes(y=after_stat(density)), binwidth = 0.2, color = 'black', 
+fill = 'grey')+ 
+  theme(panel.background = element_rect(fill = 'white'), 
+        axis.line.x=element_line(), 
+        axis.line.y=element_line()) + 
+  ggtitle("Histogram for Model Best Residuals")
+```
+
+
+
+
+
+
+Visualization 
+```{r}
+wine$predicted <- predict(model_best)
+ggplot(wine, aes(x = quality, y = predicted)) +
+  geom_point(alpha = 0.6, color = "steelblue") +
+  geom_abline(slope = 1, intercept = 0, color = "red", linetype = "dashed") +
+  labs(title = "Predicted vs Actual Wine Quality",
+    x = "Actual", y = "Predicted") + 
+  annotate("text", x = 6, y = 7.5, label = "y=4.43-1.013x1-2.018x2+0.005x3-
+0.003x4-0.483x5+0.883x6+0.289x7", color = "red", size = 3) + 
+  theme_minimal() 
+ 
+```
+
