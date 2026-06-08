@@ -23,10 +23,6 @@ The data comes from the UC Irvine Machine Learning Repository: https://archive.i
 - ggplot2
 - MASS
 
-## Files
-- Wine Quality Project.Rmd
-- Wine Quality Project.pdf
-
 ## Authors
 - Michaela Shoults
 - Jacqueline Southall
