@@ -2,9 +2,7 @@
 
 ## Overview
 
-This project focuses on portfolio optimization and retirement planning using financial data from multiple risky assets (AAPL, AMZN, NFLX) and a risk-free asset.
-
-The goal is to determine an optimal investment strategy that balances risk and return using Modern Portfolio Theory and the Capital Market Line (CML). Excel Solver was used to compute the optimal risky portfolio and evaluate different risk preferences.
+This project was created for MA 427G: Financial Mathematics. It focuses on portfolio optimization and retirement planning using financial data from multiple risky assets (AAPL, AMZN, NFLX) and a risk-free asset. The goal was to determine an optimal investment strategy that balances risk and return using Modern Portfolio Theory and the Capital Market Line (CML). Excel Solver was used to compute the optimal risky portfolio and evaluate different risk preferences.
 
 ---
 
@@ -25,6 +23,7 @@ Historical stock price data was obtained from Google Finance and processed in Ex
 - Used Excel Solver to optimize portfolio weights
 - Constructed optimal risky portfolio (M')
 - Combined risky portfolio with risk-free asset (5%) to form final portfolios along the CML
+- Create presentation to explain findings 
 
 ---
 
