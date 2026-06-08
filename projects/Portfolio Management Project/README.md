@@ -18,7 +18,7 @@ Historical stock price data was obtained from Google Finance and processed in Ex
 
 ---
 
-## Method Summary
+## Methods
 
 - Computed daily and annualized returns
 - Built covariance and correlation matrices
