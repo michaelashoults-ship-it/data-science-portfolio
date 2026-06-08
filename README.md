@@ -2,15 +2,22 @@
 
 ## Overview
 
-This repository contains a collection of data science and statistical modeling projects completed as part of coursework and independent study. The projects demonstrate experience in data analysis, statistical modeling, machine learning, optimization, and simulation using real-world and synthetic datasets.
-
-Each project explores different methods in data science, including regression analysis, portfolio optimization, stochastic simulation, and high-dimensional data analysis.
+This repository contains a collection of data science and statistical modeling projects completed as part of coursework. The projects demonstrate experience in data analysis, statistical modeling, machine learning, optimization, and simulation using real-world and synthetic datasets. Each project explores different methods in data science, including regression analysis, portfolio optimization, stochastic simulation, and high-dimensional data analysis.
 
 ---
 
 ## Projects Included
 
-### 📊 Portfolio Management Optimization
+### 🧠 MNIST Project (MA 323)
+- Analyzed MNIST handwritten digits as high-dimensional vectors
+- Computed pairwise distances using ℓ₁, ℓ₂, and ℓ∞ norms
+- Applied Wasserstein (optimal transport) distance for image comparison
+- Used Singular Value Decomposition (SVD) for low-rank approximation
+- Tools: Python, NumPy, scikit-learn, POT library
+
+--- 
+
+### 📊 Portfolio Management Project (MA 427G)
 - Built an optimal investment portfolio using Excel Solver
 - Applied Modern Portfolio Theory (Markowitz framework)
 - Analyzed risk-return tradeoffs using real stock data (AAPL, AMZN, NFLX)
@@ -19,16 +26,7 @@ Each project explores different methods in data science, including regression an
 
 ---
 
-### 🍷 Wine Quality Regression (STA 570)
-- Modeled wine quality using multiple linear regression
-- Performed exploratory data analysis and hypothesis testing
-- Used stepwise model selection (AIC)
-- Evaluated model assumptions and diagnostics
-- Tools: R, RMarkdown, regression analysis
-
----
-
-### 🔬 Stochastic Simulation & Modeling
+### 🔬 Stochastic Modeling Project (MA 420G)
 - Implemented Gibbs sampling on a 2D lattice model
 - Studied spatial correlation and temperature effects
 - Modeled financial jump processes using Poisson and Hawkes processes
@@ -36,12 +34,12 @@ Each project explores different methods in data science, including regression an
 
 ---
 
-### 🧠 MNIST Geometry & Optimal Transport (MA 323)
-- Analyzed MNIST handwritten digits as high-dimensional vectors
-- Computed pairwise distances using ℓ₁, ℓ₂, and ℓ∞ norms
-- Applied Wasserstein (optimal transport) distance for image comparison
-- Used Singular Value Decomposition (SVD) for low-rank approximation
-- Tools: Python, NumPy, scikit-learn, POT library
+### 🍷 Wine Quality Project (STA 570)
+- Modeled wine quality using multiple linear regression
+- Performed exploratory data analysis and hypothesis testing
+- Used stepwise model selection
+- Evaluated model assumptions and diagnostics
+- Tools: R, RMarkdown, regression analysis
 
 ---
 
@@ -59,7 +57,7 @@ Each project explores different methods in data science, including regression an
 
 ## Key Concepts Covered
 
-- Regression and model selection (AIC)
+- Regression and model selection
 - Portfolio theory and financial optimization
 - Markov Chain Monte Carlo (MCMC)
 - Gibbs sampling
@@ -87,5 +85,4 @@ This portfolio demonstrates applied data science skills across statistics, machi
 
 ## Author
 
-- [Your Name]
-- Data Science & Statistics Student
+- Michaela Shoults 
