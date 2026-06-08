@@ -8,7 +8,7 @@ The goal is to determine an optimal investment strategy that balances risk and r
 
 ---
 
-## Data
+## Dataset
 
 Historical stock price data was obtained from Google Finance and processed in Excel. Daily returns were calculated and used to estimate:
 
