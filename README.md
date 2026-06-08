@@ -8,7 +8,7 @@ This repository contains a collection of data science and statistical modeling p
 
 ## Projects Included
 
-### 🧠 MNIST Project (MA 323)
+### MNIST Project (MA 323)
 - Analyzed MNIST handwritten digits as high-dimensional vectors
 - Computed pairwise distances using ℓ₁, ℓ₂, and ℓ∞ norms
 - Applied Wasserstein (optimal transport) distance for image comparison
@@ -17,7 +17,7 @@ This repository contains a collection of data science and statistical modeling p
 
 --- 
 
-### 📊 Portfolio Management Project (MA 427G)
+### Portfolio Management Project (MA 427G)
 - Built an optimal investment portfolio using Excel Solver
 - Applied Modern Portfolio Theory (Markowitz framework)
 - Analyzed risk-return tradeoffs using real stock data (AAPL, AMZN, NFLX)
@@ -26,7 +26,7 @@ This repository contains a collection of data science and statistical modeling p
 
 ---
 
-### 🔬 Stochastic Modeling Project (MA 420G)
+### Stochastic Modeling Project (MA 420G)
 - Implemented Gibbs sampling on a 2D lattice model
 - Studied spatial correlation and temperature effects
 - Modeled financial jump processes using Poisson and Hawkes processes
@@ -34,7 +34,7 @@ This repository contains a collection of data science and statistical modeling p
 
 ---
 
-### 🍷 Wine Quality Project (STA 570)
+### Wine Quality Project (STA 570)
 - Modeled wine quality using multiple linear regression
 - Performed exploratory data analysis and hypothesis testing
 - Used stepwise model selection
